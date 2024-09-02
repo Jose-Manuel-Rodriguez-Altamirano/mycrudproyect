@@ -1,0 +1,11 @@
+<h1>To-Do List</h1>
+<a href="{% url 'todo_create' %}">Add new item</a>
+<ul>
+    {% for todo in todos %}
+        <li>
+            <a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a>
+            (<a href="{% url 'todo_update' todo.pk %}">edit</a> |
+             <a href="{% url 'todo_delete' todo.pk %}">delete</a>)
+        </li>
+    {% endfor %}
+</ul>
